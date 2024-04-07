@@ -8,13 +8,16 @@ namespace Televisor
 {
     internal class Persona
     {
-        private string nombre { get; set; }
-        private Domicilio domicilio { get; set; }
+        private string nombre;
+        private Domicilio domicilio;
 
         public Persona(string nombre, Domicilio domicilio)
         {
-            this.nombre = nombre;
-            this.domicilio = domicilio;
+            this.Nombre = nombre;
+            this.Domicilio = domicilio;
         }
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        internal Domicilio Domicilio { get => domicilio; set => domicilio = value; }
     }
 }

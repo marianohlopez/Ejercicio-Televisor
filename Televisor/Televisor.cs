@@ -10,62 +10,68 @@ namespace Televisor
 {
     internal class Televisor
     {
-        private string marca {  get; set; }
-        private string modelo { get; set; }
-        private int cantPulg { get; set; }
-        private bool estado { get; set; }
-        private int canal { get; set; }
+        private string marca;
+        private string modelo;
+        private int cantPulg;
+        private bool estado;
+        private int canal;
 
         public Televisor(string marca, string modelo, int cantPulg)
         {
             this.marca = marca;
             this.modelo = modelo;
             this.cantPulg = cantPulg;
-            estado = false;
-            canal = 1;
+            Estado = false;
+            Canal = 1;
         }
 
         public int obtenerCanalActual()
         {
-            return canal;
+            return Canal;
         }
 
         public bool cambiarCanal(int nuevoCanal) 
         {
-            if(nuevoCanal <= 149 && nuevoCanal > 0 && estado) 
+            if(nuevoCanal <= 149 && nuevoCanal > 0 && Estado) 
             {
-                canal = nuevoCanal;
+                Canal = nuevoCanal;
                 return true;
             }
-            canal = 1;
+            Canal = 1;
             return false;
         }
         public bool cambiarCanal()
         {
-            if (estado && canal < 149)
+            if (Estado && Canal < 149)
             {
-                canal++;
+                Canal++;
                 return true;
             }
 
-            canal = 1;
+            Canal = 1;
 
             return false;
         }
 
         public bool verPrendido()
         {
-            return estado;
+            return Estado;
         }
 
         public void CambiarEstado()
         {
-            estado = !estado;
+            Estado = !Estado;
         }
 
         public override string ToString()
         {
-            return $"Televisor {marca} {modelo} de {cantPulg} pulgadas";
+            return $"Televisor {Marca} {Modelo} de {CantPulg} pulgadas";
         }
+
+        public string Marca { get => marca; set => marca = value; }
+        public string Modelo { get => modelo; set => modelo = value; }
+        public int CantPulg { get => cantPulg; set => cantPulg = value; }
+        public bool Estado { get => estado; set => estado = value; }
+        public int Canal { get => canal; set => canal = value; }
     }
 }

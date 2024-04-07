@@ -8,16 +8,24 @@ namespace Televisor
 {
     internal class Domicilio
     {
-        private string calle {  get; set; }
-        private int numero { get; set; }
-        private string barrio { get; set; }
+        private string calle;
+        private int numero;
+        private string barrio;
 
         public Domicilio(string calle, int numero, string barrio)
         {
-            this.calle = calle;
-            this.numero = numero;
-            this.barrio = barrio;
+            this.Calle = calle;
+            this.Numero = numero;
+            this.Barrio = barrio;
         }
 
+        public override string ToString()
+        {
+            return $"Domicilio: {Calle} {Numero} {Barrio}";
+        }
+
+        public string Calle { get => calle; set => calle = value; }
+        public int Numero { get => numero; set => numero = value; }
+        public string Barrio { get => barrio; set => barrio = value; }
     }
 }

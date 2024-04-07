@@ -11,19 +11,22 @@ namespace Televisor
         }
 
         Televisor newTelevisor = new Televisor("Samsung", "Silver", 50);
+        Domicilio domicilio = new Domicilio("Jonte", 5299, "Monte Castro");
 
         private void Form1_Load(object sender, EventArgs e)
         {
             string nombreUsuario = Microsoft.VisualBasic.Interaction.InputBox
                 ("Ingrese nombre de usuario", "Datos");
-            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            Persona usuario = new Persona(nombreUsuario, domicilio);
+            if (string.IsNullOrWhiteSpace(usuario.Nombre))
             {
                 MessageBox.Show("Debe ingresar un nombre de usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
             else
             {
-                usuarioLabel.Text = $"Bienvenido, {nombreUsuario}!";
+                usuarioLabel.Text = $"Bienvenido/a, {usuario.Nombre}!";
+                labelDireccion.Text = $"{domicilio}";
                 labelCanal.Text = $"Canal: {newTelevisor.obtenerCanalActual()}";
             }
         }

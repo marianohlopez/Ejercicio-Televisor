@@ -35,6 +35,7 @@
             txtNumCanal = new TextBox();
             label1 = new Label();
             labelEstado = new Label();
+            labelDireccion = new Label();
             SuspendLayout();
             // 
             // usuarioLabel
@@ -101,12 +102,22 @@
             labelEstado.TabIndex = 6;
             labelEstado.Text = "Apagada";
             // 
+            // labelDireccion
+            // 
+            labelDireccion.AutoSize = true;
+            labelDireccion.Location = new Point(419, 81);
+            labelDireccion.Name = "labelDireccion";
+            labelDireccion.Size = new Size(57, 15);
+            labelDireccion.TabIndex = 7;
+            labelDireccion.Text = "Direccion";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Highlight;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelDireccion);
             Controls.Add(labelEstado);
             Controls.Add(label1);
             Controls.Add(txtNumCanal);
@@ -130,5 +141,6 @@
         private TextBox txtNumCanal;
         private Label label1;
         private Label labelEstado;
+        private Label labelDireccion;
     }
 }
